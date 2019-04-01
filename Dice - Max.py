@@ -81,7 +81,7 @@ while(True):
             pygame.draw.circle(window, black, (int(posDot5[0]), int(posDot5[1])), radius)
             pygame.draw.circle(window, black, (int(posDot6[0]), int(posDot6[1])), radius)
             pygame.display.update()
-           
+        
         #elif msg == "quit":
             #break
     except Exception as e:
