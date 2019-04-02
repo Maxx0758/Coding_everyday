@@ -35,9 +35,22 @@ while(running):
             pygame.display.update()
 
             for event in pygame.event.get():
+                if event.type == pygame.mouse.get_pressed():
+                    if door1.collidepoint(mousePos):
+                        print("Tihi")
+                        andenRunde = 2
+                        return andenRunde
+                    elif door2.collidepoint(mousePos):
+                        print("You are a god")
+                        andenRunde = 2
+                        return andenRunde
+                    elif door3.collidepoint(mousePos):
+                        print("Big oof")
+                        andenRunde = 2
+                        return andenRunde
 
         
-        if runde == 2:
+        if andenRunde == 2:
             break
 
         if runde == 3:
