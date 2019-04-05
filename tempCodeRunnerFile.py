@@ -1,1 +1,0 @@
-window.blit(text, (400 - text.get_width() // 2, 30 - text.get_height() // 2))
