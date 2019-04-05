@@ -2,6 +2,7 @@ from random import randint
 import math
 import pygame, sys
 from pygame.locals import *
+global door1, door2, door3
 
 pygame.init()
 
@@ -16,6 +17,10 @@ Blue = (0, 0, 255)
 running = True
 
 Green  = (0, 255, 0)
+
+runde = True
+andenRunde = False
+tredjeRunde = False
 
 clock = pygame.time.Clock()
 font = pygame.font.SysFont("comicsansms", 30)
@@ -35,6 +40,30 @@ ttext2 = font2.render("Germany", True, (255, 255, 255))
 ttext3 = font2.render("England", True, (255, 255, 255))
 ttext4 = font2.render("Japan", True, (255, 255, 255))
 
+door1 = pygame.draw.rect(window, Red, Rect((50, 100),(200, 400)))
+door2 = pygame.draw.rect(window, Red, Rect((300, 100),(200, 400)))
+door3 = pygame.draw.rect(window, Red, Rect((550, 100),(200, 400)))
+def drawRoundOneDoors():
+    #Door1
+    pygame.draw.rect(window, Red, Rect((50, 100),(200, 400)))
+    #Door2
+    pygame.draw.rect(window, Red, Rect((300, 100),(200, 400)))
+    #Door3
+    pygame.draw.rect(window, Red, Rect((550, 100),(200, 400)))
+def drawRoundTwoDoors():
+    #Door1
+    pygame.draw.rect(window, Blue, Rect((50, 100),(200, 400)))
+    #Door2
+    pygame.draw.rect(window, Blue, Rect((300, 100),(200, 400)))
+    #Door3
+    pygame.draw.rect(window, Blue, Rect((550, 100),(200, 400)))
+def drawRoundThreeDoors():
+    #Door1
+    pygame.draw.rect(window, Green, Rect((50, 100),(200, 400)))
+    #Door2
+    pygame.draw.rect(window, Green, Rect((300, 100),(200, 400)))
+    #Door3
+    pygame.draw.rect(window, Green, Rect((550, 100),(200, 400)))
 def roundOne():
     window.fill((0,0,0))
     window.blit(text, (400 - text.get_width() // 2, 30 - text.get_height() // 2))
@@ -43,12 +72,7 @@ def roundOne():
     window.blit(text4, (650 - text4.get_width() // 2, 75 - text4.get_height() // 2))
     pygame.display.flip()
     clock.tick(60)
-    door1 = pygame.draw.rect(window, Red, Rect((50, 100),(200, 400)))
-    print(door1)
-    door2 = pygame.draw.rect(window, Red, Rect((300, 100),(200, 400)))
-    print(door2)
-    door3 = pygame.draw.rect(window, Red, Rect((550, 100),(200, 400)))
-    print(door3)
+    drawRoundOneDoors()
     pygame.display.update()
 
 def roundSecond():
@@ -59,12 +83,7 @@ def roundSecond():
     window.blit(stext4, (650 - stext4.get_width() // 2, 75 - stext4.get_height() // 2))
     pygame.display.flip()
     clock.tick(60)
-    door1 = pygame.draw.rect(window, Blue, Rect((50, 100),(200, 400)))
-    print(door1)
-    door2 = pygame.draw.rect(window, Blue, Rect((300, 100),(200, 400)))
-    print(door2)
-    door3 = pygame.draw.rect(window, Blue, Rect((550, 100),(200, 400)))
-    print(door3)
+    drawRoundTwoDoors()
     pygame.display.update()
 
 def roundThird():
@@ -75,20 +94,14 @@ def roundThird():
     window.blit(ttext4, (650 - ttext4.get_width() // 2, 75 - ttext4.get_height() // 2))
     pygame.display.flip()
     clock.tick(60)
-    door1 = pygame.draw.rect(window, Green, Rect((50, 100),(200, 400)))
-    print(door1)
-    door2 = pygame.draw.rect(window, Green, Rect((300, 100),(200, 400)))
-    print(door2)
-    door3 = pygame.draw.rect(window, Green, Rect((550, 100),(200, 400)))
-    print(door3)
+    drawRoundThreeDoors()
     pygame.display.update()
 
 while(running):
     try:
         mousePos = pygame.mouse.get_pos()
-        print(mousePos)
+        #print(mousePos)
         pygame.time.delay(100)
-        runde = True
 
         if runde == True:
             roundOne()
