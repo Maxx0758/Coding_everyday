@@ -18,7 +18,7 @@ brown = (102, 51, 0)
 black = (0, 0, 0)
 windowColor = (158, 219, 224)
 #Questions and answers
-questions = ["Test 1", "Test 2", "Test 3", "Test 4"]
+questions = ["hej med dig", "Test 2", "Test 3", "Test 4"]
 
 
 window = pygame.display.set_mode((width,height))
@@ -48,10 +48,16 @@ def drawRound2():
     window.fill((255, 255, 255))
     #Door 1
     pygame.draw.rect(window, brown, pygame.Rect((door1[0], door1[1]), (doorWidth, doorHeight)))
+    pygame.draw.ellipse(window, black, pygame.Rect(((door1[0] + doorWidth) - doorHandleWidth - 15, ((door1[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
+    pygame.draw.rect(window, windowColor, pygame.Rect((door1[0] + (doorWidth / 2) - (doorWindowWidth / 2), door1[1] + doorWindowHeight), (doorWindowWidth, doorWindowHeight)))
     #Door 2
     pygame.draw.rect(window, brown, pygame.Rect((door2[0], door2[1]), (doorWidth, doorHeight)))
+    pygame.draw.ellipse(window, black, pygame.Rect(((door2[0] + doorWidth) - doorHandleWidth - 15, ((door2[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
+    pygame.draw.rect(window, windowColor, pygame.Rect((door2[0] + (doorWidth / 2) - (doorWindowWidth / 2), door2[1] + doorWindowHeight), (doorWindowWidth, doorWindowHeight)))
     #Door 3
     pygame.draw.rect(window, brown, pygame.Rect((door3[0], door3[1]), (doorWidth, doorHeight)))
+    pygame.draw.ellipse(window, black, pygame.Rect(((door3[0] + doorWidth) - doorHandleWidth - 15, ((door3[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
+    pygame.draw.rect(window, windowColor, pygame.Rect((door3[0] + (doorWidth / 2) - (doorWindowWidth / 2), door3[1] + doorWindowHeight), (doorWindowWidth, doorWindowHeight)))
     #Question
     drawHeadline1()
     pygame.display.update()
@@ -59,10 +65,16 @@ def drawRound3():
     window.fill((255, 255, 255))
     #Door 1
     pygame.draw.rect(window, brown, pygame.Rect((door1[0], door1[1]), (doorWidth, doorHeight)))
+    pygame.draw.ellipse(window, black, pygame.Rect(((door1[0] + doorWidth) - doorHandleWidth - 15, ((door1[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
+    pygame.draw.rect(window, windowColor, pygame.Rect((door1[0] + (doorWidth / 2) - (doorWindowWidth / 2), door1[1] + doorWindowHeight), (doorWindowWidth, doorWindowHeight)))
     #Door 2
     pygame.draw.rect(window, brown, pygame.Rect((door2[0], door2[1]), (doorWidth, doorHeight)))
+    pygame.draw.ellipse(window, black, pygame.Rect(((door2[0] + doorWidth) - doorHandleWidth - 15, ((door2[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
+    pygame.draw.rect(window, windowColor, pygame.Rect((door2[0] + (doorWidth / 2) - (doorWindowWidth / 2), door2[1] + doorWindowHeight), (doorWindowWidth, doorWindowHeight)))
     #Door 3
     pygame.draw.rect(window, brown, pygame.Rect((door3[0], door3[1]), (doorWidth, doorHeight)))
+    pygame.draw.ellipse(window, black, pygame.Rect(((door3[0] + doorWidth) - doorHandleWidth - 15, ((door3[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
+    pygame.draw.rect(window, windowColor, pygame.Rect((door3[0] + (doorWidth / 2) - (doorWindowWidth / 2), door3[1] + doorWindowHeight), (doorWindowWidth, doorWindowHeight)))
     #Question
     drawHeadline1()
     pygame.display.update()
@@ -70,10 +82,16 @@ def drawRound4():
     window.fill((255, 255, 255))
     #Door 1
     pygame.draw.rect(window, brown, pygame.Rect((door1[0], door1[1]), (doorWidth, doorHeight)))
+    pygame.draw.ellipse(window, black, pygame.Rect(((door1[0] + doorWidth) - doorHandleWidth - 15, ((door1[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
+    pygame.draw.rect(window, windowColor, pygame.Rect((door1[0] + (doorWidth / 2) - (doorWindowWidth / 2), door1[1] + doorWindowHeight), (doorWindowWidth, doorWindowHeight)))
     #Door 2
     pygame.draw.rect(window, brown, pygame.Rect((door2[0], door2[1]), (doorWidth, doorHeight)))
+    pygame.draw.ellipse(window, black, pygame.Rect(((door2[0] + doorWidth) - doorHandleWidth - 15, ((door2[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
+    pygame.draw.rect(window, windowColor, pygame.Rect((door2[0] + (doorWidth / 2) - (doorWindowWidth / 2), door2[1] + doorWindowHeight), (doorWindowWidth, doorWindowHeight)))
     #Door 3
     pygame.draw.rect(window, brown, pygame.Rect((door3[0], door3[1]), (doorWidth, doorHeight)))
+    pygame.draw.ellipse(window, black, pygame.Rect(((door3[0] + doorWidth) - doorHandleWidth - 15, ((door3[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
+    pygame.draw.rect(window, windowColor, pygame.Rect((door3[0] + (doorWidth / 2) - (doorWindowWidth / 2), door3[1] + doorWindowHeight), (doorWindowWidth, doorWindowHeight)))
     #Question
     drawHeadline1()
     pygame.display.update()
