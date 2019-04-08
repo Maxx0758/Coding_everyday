@@ -17,6 +17,7 @@ Round = 1
 brown = (102, 51, 0)
 black = (0, 0, 0)
 windowColor = (158, 219, 224)
+background = (255, 255, 255)
 #Questions and answers
 questions = ["hej med dig", "Test 2", "Test 3", "Test 4"]
 
@@ -27,8 +28,9 @@ pygame.display.set_caption("The doors")
 headlineFont = pygame.font.SysFont("comicsansms", 30, False, False)
 def startup():
     drawRound1()
+
 def drawRound1():
-    window.fill((255, 255, 255))
+    window.fill(background)
     #Door 1
     pygame.draw.rect(window, brown, pygame.Rect((door1[0], door1[1]), (doorWidth, doorHeight)))
     pygame.draw.ellipse(window, black, pygame.Rect(((door1[0] + doorWidth) - doorHandleWidth - 15, ((door1[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
@@ -44,8 +46,9 @@ def drawRound1():
     #Question
     drawHeadline1()
     pygame.display.update()
+
 def drawRound2():
-    window.fill((255, 255, 255))
+    window.fill(background)
     #Door 1
     pygame.draw.rect(window, brown, pygame.Rect((door1[0], door1[1]), (doorWidth, doorHeight)))
     pygame.draw.ellipse(window, black, pygame.Rect(((door1[0] + doorWidth) - doorHandleWidth - 15, ((door1[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
@@ -61,8 +64,9 @@ def drawRound2():
     #Question
     drawHeadline1()
     pygame.display.update()
+
 def drawRound3():
-    window.fill((255, 255, 255))
+    window.fill(background)
     #Door 1
     pygame.draw.rect(window, brown, pygame.Rect((door1[0], door1[1]), (doorWidth, doorHeight)))
     pygame.draw.ellipse(window, black, pygame.Rect(((door1[0] + doorWidth) - doorHandleWidth - 15, ((door1[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
@@ -78,8 +82,9 @@ def drawRound3():
     #Question
     drawHeadline1()
     pygame.display.update()
+
 def drawRound4():
-    window.fill((255, 255, 255))
+    window.fill(background)
     #Door 1
     pygame.draw.rect(window, brown, pygame.Rect((door1[0], door1[1]), (doorWidth, doorHeight)))
     pygame.draw.ellipse(window, black, pygame.Rect(((door1[0] + doorWidth) - doorHandleWidth - 15, ((door1[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
@@ -95,11 +100,13 @@ def drawRound4():
     #Question
     drawHeadline1()
     pygame.display.update()
+
 def drawHeadline1():
     i = randint(0, len(questions) - 1)
     question = headlineFont.render(questions[i], True, black)
     questions.pop(i)
     window.blit(question, ((width / 2) - question.get_width() // 2, 30 - question.get_height() // 2))
+    
 startup()
 
 while(running):
