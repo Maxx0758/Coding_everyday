@@ -20,12 +20,14 @@ windowColor = (158, 219, 224)
 background = (255, 255, 255)
 #Questions and answers
 questions = ["hej med dig", "Test 2", "Test 3", "Test 4"]
-
+checkQuestion = ["hej med dig", "Test 2", "Test 3", "Test 4"]
 
 window = pygame.display.set_mode((width,height))
 pygame.display.set_caption("The doors")
 
 headlineFont = pygame.font.SysFont("comicsansms", 30, False, False)
+def checkWhichQuestion():
+    
 def startup():
     drawRound1()
 
@@ -156,5 +158,5 @@ while(running):
             break
     except Exception as e:
         print(e)
-        print("[ERROR] Error in the program, fix it!")
+        print("[ERROR] Error in the code, fix it!")
 print("Bye")
