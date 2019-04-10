@@ -10,6 +10,8 @@ window = pygame.display.set_mode([800,600])
 
 White = (255, 255, 255)
 
+Black = (0, 0, 0)
+
 Red = (255, 0, 0)
 
 Blue = (0, 0, 255)
@@ -43,27 +45,49 @@ ttext4 = font2.render("Japan", True, (255, 255, 255))
 door1 = pygame.draw.rect(window, Red, Rect((50, 100),(200, 400)))
 door2 = pygame.draw.rect(window, Red, Rect((300, 100),(200, 400)))
 door3 = pygame.draw.rect(window, Red, Rect((550, 100),(200, 400)))
+
 def drawRoundOneDoors():
     #Door1
     pygame.draw.rect(window, Red, Rect((50, 100),(200, 400)))
+    pygame.draw.rect(window, White, Rect((100, 150),(100, 100)))
+    pygame.draw.rect(window, Black, Rect((220, 300), (20, 5)))
     #Door2
     pygame.draw.rect(window, Red, Rect((300, 100),(200, 400)))
+    pygame.draw.rect(window, White, Rect((350, 150),(100, 100)))
+    pygame.draw.rect(window, Black, Rect((470, 300), (20, 5)))
     #Door3
     pygame.draw.rect(window, Red, Rect((550, 100),(200, 400)))
+    pygame.draw.rect(window, White, Rect((600, 150),(100, 100)))
+    pygame.draw.rect(window, Black, Rect((720, 300), (20, 5)))
+
 def drawRoundTwoDoors():
     #Door1
     pygame.draw.rect(window, Blue, Rect((50, 100),(200, 400)))
+    pygame.draw.rect(window, White, Rect((100, 150),(100, 100)))
+    pygame.draw.rect(window, Black, Rect((220, 300), (20, 5)))
     #Door2
     pygame.draw.rect(window, Blue, Rect((300, 100),(200, 400)))
+    pygame.draw.rect(window, White, Rect((350, 150),(100, 100)))
+    pygame.draw.rect(window, Black, Rect((470, 300), (20, 5)))
     #Door3
     pygame.draw.rect(window, Blue, Rect((550, 100),(200, 400)))
+    pygame.draw.rect(window, White, Rect((600, 150),(100, 100)))
+    pygame.draw.rect(window, Black, Rect((720, 300), (20, 5)))
+
 def drawRoundThreeDoors():
     #Door1
     pygame.draw.rect(window, Green, Rect((50, 100),(200, 400)))
+    pygame.draw.rect(window, White, Rect((100, 150),(100, 100)))
+    pygame.draw.rect(window, Black, Rect((220, 300), (20, 5)))
     #Door2
     pygame.draw.rect(window, Green, Rect((300, 100),(200, 400)))
+    pygame.draw.rect(window, White, Rect((350, 150),(100, 100)))
+    pygame.draw.rect(window, Black, Rect((470, 300), (20, 5)))
     #Door3
     pygame.draw.rect(window, Green, Rect((550, 100),(200, 400)))
+    pygame.draw.rect(window, White, Rect((600, 150),(100, 100)))
+    pygame.draw.rect(window, Black, Rect((720, 300), (20, 5)))
+
 def roundOne():
     window.fill((0,0,0))
     window.blit(text, (400 - text.get_width() // 2, 30 - text.get_height() // 2))
