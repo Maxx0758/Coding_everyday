@@ -1,6 +1,6 @@
 import pygame
 from random import randint
-
+global question
 #Initialises the Pygame module
 pygame.init()
 
@@ -22,14 +22,29 @@ background = (255, 255, 255)
 questions = ["hej med dig", "Test 2", "Test 3", "Test 4"]
 checkQuestion = ["hej med dig", "Test 2", "Test 3", "Test 4"]
 
-window = pygame.display.set_mode((width,height))
+window = pygame.display.set_mode((width, height))
 pygame.display.set_caption("The doors")
 
 headlineFont = pygame.font.SysFont("comicsansms", 30, False, False)
-def checkWhichQuestion():
-    
 def startup():
     drawRound1()
+
+def drawQandA():
+    i = randint(0, len(questions) - 1)
+    question = headlineFont.render(questions[i], True, black)
+    test = questions[i]
+    if checkQuestion[0] == test:
+        correctAnswer = "Hej"
+    elif checkQuestion[1] == test:
+        correctAnswer = "Testing 2"
+    elif checkQuestion[2] == test:
+        correctAnswer = "Testing 3"
+    elif checkQuestion[3] == test:
+        correctAnswer = "Testing 4"
+    answer =  headlineFont.render(correctAnswer, True, black)
+    window.blit(answer, ((width / 2) - answer.get_width() // 2, 130 - answer.get_height() // 2))
+    questions.pop(i) 
+    window.blit(question, ((width / 2) - question.get_width() // 2, 30 - question.get_height() // 2))
 
 def drawRound1():
     window.fill(background)
@@ -46,7 +61,7 @@ def drawRound1():
     pygame.draw.ellipse(window, black, pygame.Rect(((door3[0] + doorWidth) - doorHandleWidth - 15, ((door3[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
     pygame.draw.rect(window, windowColor, pygame.Rect((door3[0] + (doorWidth / 2) - (doorWindowWidth / 2), door3[1] + doorWindowHeight), (doorWindowWidth, doorWindowHeight)))
     #Question
-    drawHeadline1()
+    drawQandA()
     pygame.display.update()
 
 def drawRound2():
@@ -64,7 +79,7 @@ def drawRound2():
     pygame.draw.ellipse(window, black, pygame.Rect(((door3[0] + doorWidth) - doorHandleWidth - 15, ((door3[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
     pygame.draw.rect(window, windowColor, pygame.Rect((door3[0] + (doorWidth / 2) - (doorWindowWidth / 2), door3[1] + doorWindowHeight), (doorWindowWidth, doorWindowHeight)))
     #Question
-    drawHeadline1()
+    drawQandA()
     pygame.display.update()
 
 def drawRound3():
@@ -82,7 +97,7 @@ def drawRound3():
     pygame.draw.ellipse(window, black, pygame.Rect(((door3[0] + doorWidth) - doorHandleWidth - 15, ((door3[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
     pygame.draw.rect(window, windowColor, pygame.Rect((door3[0] + (doorWidth / 2) - (doorWindowWidth / 2), door3[1] + doorWindowHeight), (doorWindowWidth, doorWindowHeight)))
     #Question
-    drawHeadline1()
+    drawQandA()
     pygame.display.update()
 
 def drawRound4():
@@ -100,23 +115,17 @@ def drawRound4():
     pygame.draw.ellipse(window, black, pygame.Rect(((door3[0] + doorWidth) - doorHandleWidth - 15, ((door3[1]) + (doorHeight / 2)) - 20), (doorHandleWidth, doorHandleHeight)))
     pygame.draw.rect(window, windowColor, pygame.Rect((door3[0] + (doorWidth / 2) - (doorWindowWidth / 2), door3[1] + doorWindowHeight), (doorWindowWidth, doorWindowHeight)))
     #Question
-    drawHeadline1()
+    drawQandA()
     pygame.display.update()
 
-def drawHeadline1():
-    i = randint(0, len(questions) - 1)
-    question = headlineFont.render(questions[i], True, black)
-    questions.pop(i)
-    window.blit(question, ((width / 2) - question.get_width() // 2, 30 - question.get_height() // 2))
-    
 startup()
 
 while(running):
     try:
         pygame.time.delay(100)
         mousePos = pygame.mouse.get_pos()
-        print(mousePos)
-        print(Round)
+        #print(mousePos)
+        #print(Round)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
