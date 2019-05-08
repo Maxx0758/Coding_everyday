@@ -1,7 +1,8 @@
 import pygame
+import time
 from random import randint
 
-(width, height) = (1500,1500)
+(width, height) = (1000,1000)
 window = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Random walk game")
 white = (255, 255, 255)
@@ -9,18 +10,33 @@ black = (0, 0, 0)
 blue = (0, 0, 180)
 radius = 30
 running = True
-
-def drawObstacles():
-    piece = pygame.draw.circle(window, blue, SKRIVPOS, radius)
+fields = 10
+#def drawObstacles():
+    #piece = pygame.draw.circle(window, blue, SKRIVPOS, radius)
 
 def drawBoard():
-    drawObstacles()
-    for i in range (0, 100):
-        for i in range (0, 100):
-            pass 
+    #drawObstacles()
+    l = 0
+    for k in range(0, fields):
+                l += 1
+                if l > 10:
+                    l = 0
+                #print(l)
+    for i in range (0, fields):
+        for j in range (0, fields):
+            if l == 1 or 3 or 5 or 7 or 9:
+                color = (0, 0, 0)
+                #print(color)             
+            elif l == 0 or 2 or 4 or 6 or 8 or 10:
+                color = (255, 255, 255)
+                #print(color)
+            time.sleep(1)
+            pygame.draw.rect(window, color, pygame.Rect(i * width / fields, j * height / fields, width / fields, height / fields))
+            print(color)
+            
 def drawDirection():
     direction = randint(1,4)
-    
+'''    
 def drawDice():
     side = randint(1, 6)
     radius = 40
@@ -84,7 +100,12 @@ def drawDice():
         pygame.draw.circle(window, black, (int(posDot5[0]), int(posDot5[1])), radius)
         pygame.draw.circle(window, black, (int(posDot6[0]), int(posDot6[1])), radius)
         pygame.display.update()
-
+'''
 while running:
     try:
-        
+        drawBoard()
+        pygame.display.update()
+    except Exception as e:
+        print(e)
+        print("There is an ERROR")
+print("Tak for at du spillede")
