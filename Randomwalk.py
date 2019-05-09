@@ -16,22 +16,43 @@ fields = 10
 
 def drawBoard():
     #drawObstacles()
+    color = [black, white]
+    k = 0
+    '''
     l = 0
     for k in range(0, fields):
                 l += 1
                 if l > 10:
                     l = 0
                 #print(l)
+                '''
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
     for i in range (0, fields):
+        if k == 0:
+            farve = color[0]
+            k = 1
+        elif k == 1:
+            farve = color[1]
+            k = 0
         for j in range (0, fields):
+            if k == 0:
+                farve = color[0]
+                k = 1
+            elif k == 1:
+                farve = color[1]
+                k = 0
+            '''
             if l == 1 or 3 or 5 or 7 or 9:
                 color = (0, 0, 0)
                 #print(color)             
             elif l == 0 or 2 or 4 or 6 or 8 or 10:
                 color = (255, 255, 255)
                 #print(color)
-            time.sleep(1)
-            pygame.draw.rect(window, color, pygame.Rect(i * width / fields, j * height / fields, width / fields, height / fields))
+                '''
+            
+            pygame.draw.rect(window, farve, pygame.Rect(i * width / fields, j * height / fields, width / fields, height / fields))
             print(color)
             
 def drawDirection():
